@@ -1,0 +1,57 @@
+---
+- name: general stuff to install
+  hosts: control
+  remote_user: sudo
+  become: true
+
+  tasks:
+    - name: get update
+      apt:
+        upgrade: yes
+        update_cache: yes
+
+#    - name: adding key to authroized keys
+#      copy:
+#        src: home/vagrant/environment/awsk
+#        dest: /home/vagrant/.ssh
+
+    - name: install pip
+      shell: sudo apt-get install python-pip
+
+    - name: adding aws AWS_server
+      add_host:
+        name: AWS_server
+        ansible_host: 34.255.121.187
+        ansible_user: ubuntu
+        ansible_ssh_private_key_file: /home/Vagrant/.ssh/awsk
+
+    # - name: awstheinitialplaybook
+    #   hosts: AWS_server
+    #   remote_user: sudo
+    #   become: true
+    #   vars:
+    #     ansible_distribution_release: "xenial"
+
+#- name: general stuff to install
+#  hosts: AWS_server
+#  remote_user: sudo
+#  become: true
+#  tasks:
+#    - name: get update
+#      apt:
+#        upgrade: yes
+#        update_cache: yes
+#
+#    - name: stuff for app
+#      hosts: app
+  #    remote_user: sudo
+    #   become: yes
+    #
+    # - name: install git
+    #   apt:
+    #     name: git
+    #     state: present
+    #     update_cache: yes
+    #
+    # - name: install software properties common
+    #   shell: apt-get install software-properties-common -y
