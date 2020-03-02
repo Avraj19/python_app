@@ -10,6 +10,8 @@ Vagrant.configure("2") do |config|
       py.vm.network "private_network", ip: "192.168.10.112"
       py.hostsupdater.aliases = ["control.local"]
       py.vm.synced_folder "environment1", "/home/vagrant/environment"
+      py.vm.synced_folder "stuffneeded", "/home/vagrant/stuffneeded"
+
       py.vm.provision :ansible_local do |ansible|
         ansible.playbook       = "/home/vagrant/environment/theinitialplaybook.yml"
         ansible.verbose        = true
