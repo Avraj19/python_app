@@ -11,6 +11,7 @@ Vagrant.configure("2") do |config|
       py.hostsupdater.aliases = ["control.local"]
       py.vm.synced_folder "environment1", "/home/vagrant/environment"
       py.vm.synced_folder "stuffneeded", "/home/vagrant/stuffneeded"
+      py.vm.synced_folder "Downloads", "/home/vagrant/Downloads"
 
       py.vm.provision :ansible_local do |ansible|
         ansible.playbook       = "/home/vagrant/environment/theinitialplaybook.yml"
