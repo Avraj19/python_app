@@ -78,3 +78,4 @@
 
   - name: install pycham
     shell: sudo snap install pycharm-community --classic
+
