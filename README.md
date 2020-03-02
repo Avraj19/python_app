@@ -1,7 +1,6 @@
 # Python Environment Project
 ## Timings
-555.54 Days
-
+3 Days
 
 ## Summary
 
