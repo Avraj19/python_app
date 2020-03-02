@@ -1,6 +1,6 @@
 ---
 - name: general stuff to install
-  hosts: control
+  hosts: python
   remote_user: sudo
   become: true
 
@@ -16,7 +16,8 @@
 #        dest: /home/vagrant/.ssh
 
     - name: install pip
-      shell: sudo apt-get install python-pip
+      shell: sudo apt-get install python3.6
+
 
     - name: adding aws AWS_server
       add_host:
