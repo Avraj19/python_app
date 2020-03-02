@@ -1,6 +1,4 @@
 # Python Environment Project
-
-
 ## Timings
 2 Days
 
